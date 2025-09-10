@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥오늘의 한국 인기 쇼츠 TOP 10</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🔥오늘의 한국 인기 쇼츠 TOP 10</h1>
+            <p class="date" id="currentDate"></p>
+        </header>
+
+        <main class="main">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>인기 쇼츠를 불러오는 중...</p>
+            </div>
+
+            <div class="error" id="error" style="display: none;">
+                <div class="error-icon">⚠️</div>
+                <h3>데이터를 불러올 수 없습니다</h3>
+                <p id="errorMessage">오늘 업로드된 인기 쇼츠를 찾을 수 없습니다.</p>
+                <button class="retry-btn" onclick="location.reload()">다시 시도</button>
+            </div>
+
+            <div class="shorts-grid" id="shortsGrid" style="display: none;">
+                <!-- 쇼츠 카드들이 여기에 동적으로 생성됩니다 -->
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>YouTube Data API v3를 활용한 실시간 인기 쇼츠 대시보드</p>
+        </footer>
+    </div>
+
+    <script src="scripts/config.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
